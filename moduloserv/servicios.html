@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NUESTROS SERVICIOS</title>
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menuitem img').animate({width: 100}, 0);
+			$('.menuitem').mouseover(function(){
+					gridimage = $(this).find('img');
+					gridimage.stop().animate({width: 200}, 150);
+				}).mouseout(function(){
+					gridimage.stop().animate({width: 100}, 150);
+			});
+		}); 
+		
+$(document).ready(function() {
+	$('a.login-window').click(function() {
+		
+		// Getting the variable's value from a link 
+		var loginBox = $(this).attr('href');
+
+		//Fade in the Popup and add close button
+		$(loginBox).fadeIn(300);
+		
+		//Set the center alignment padding + border
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		return false;
+	});
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .login-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+});
+
+	</script>
+<style type="text/css">
+body{
+	 /*background:#202020;*/ /*color de fondo cambiarlo no se q color*/
+	 font:bold 12px Arial, Helvetica, sans-serif;
+	 margin:0;
+	 padding:0;
+	 min-width:960px;
+	 color:#bbbbbb; 
+}
+
+.container {width: 960px; margin: 0 auto; overflow: hidden;}
+
+#content {	float: left; width: 100%;}
+
+.post { margin: 0 auto; padding-bottom: 50px; float: left; width: 960px; }
+
+.btn-sign {
+	width:460px;
+	margin-bottom:20px;
+	margin:0 auto;
+	padding:20px;
+	border-radius:5px;
+	background: -moz-linear-gradient(center top, #00c6ff, #018eb6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#00c6ff), to(#018eb6));
+	background:  -o-linear-gradient(top, #00c6ff, #018eb6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#00c6ff', EndColorStr='#018eb6');
+	text-align:center;
+	font-size:36px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+.btn-sign a { color:#fff; text-shadow:0 1px 2px #161616; }
+
+#mask {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	z-index: 10;
+	width: 100%; height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+.login-popup{
+	display:none;
+	background: #333;
+	padding: 10px; 	
+	border: 2px solid #ddd;
+	float: left;
+	font-size: 12px;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999;
+	-moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+    -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+    -moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+img.btn_close {
+	float: right; 
+	margin: -28px -28px 0 0;
+}
+		*{ padding:0; margin:0; }
+		img{ border: none; -ms-interpolation-mode: bicubic; left:50%; }
+		/*body{ padding:10; text-align:center; background:#fafafa; }*/
+		
+		#wrapper{
+	position:absolute;
+	left:20%;
+	padding-top:100px;
+	width:950px;
+	top: 20px;
+}
+		
+		#menuwrapper{ position:relative; height:200px;}
+			#menu{
+	position:absolute;
+	bottom:279px;
+	left:-8px;
+	width: 831px;
+	height: 297px;
+}
+				.menuitem{ position:fixed relative; bottom:0px; display:inline-block; }
+				
+				/*Build Internet Demo Page Only*/
+					#buildinternet-link{
+						z-index: 10;
+						width: 100%;
+						height: 40px;
+						text-align: center;
+						background: #000 url("http://www.buildinternet.com/live/imagefill/bi-demo-branding.jpg") no-repeat 5px 5px;
+						position: absolute;
+						bottom: 0;
+						left:0px;
+						
+					}
+					#buildinternet-link p{
+						padding: 10px;
+						font-size: 14px;
+						color: #CCC;
+						font-family:arial, sans-serif;
+					}
+					#buildinternet-link a{
+						color: #A7D7E9;
+					}
+					
+	</style>
+    
+</head>
+
+<body>
+<div id="wrapper">
+		<img src="SERV.jpg"/>
+		<div id="menuwrapper">
+			<div id="menu">
+            <div class="btn-sign">
+             <div  class= class="menuitem">
+				<a href="#login-box" class="login-window"><img src="atencion.jpg" alt="Atencion a personas de la tercera edad" width="536" height="196" style="width: 20%;height: 20%;" title="atencion"/></a>
+        		<a href="#login-box0" class="login-window"><img src="ancianos.jpg" alt="Atencion" width="240" height="240" style="width: 20%;height: 20%;" title="Atencion a Personas de la tercera edad" /></a>
+			<a href="#login-box1" class="login-window"><img src="aplicacionmedybi.jpg" alt="Aplicacion" width="240" height="240" style="width: 20%;height: 20%;" title="Aplicacion de tratamientos medicos y biologicos" /></a>
+			<a href="#login-box2" class="login-window"><img src="aplicacionsuero.jpg" alt="Aplicacionsuero" width="240" height="240"  style="width: 20%;height: 20%;" title="Aplicacion de suero" /></a>
+			<a href="#login-box3" class="login-window"><img src="cateter.jpg" alt="cateter" width="240" height="240" style="width: 20%;height: 20%;" title="Instalacion de cateterismo" /></a>
+			<a href="#login-box4" class="login-window"><img src="cirugiacara.jpg" alt="cirugia" width="240" height="240" style="width: 20%;height: 20%;" title="Cuidado de pacientes con cirugia de cara, entre otros" /></a>
+			<a href="#login-box5" class="login-window"><img src="condiscapacidad.jpg" alt="Atencion a personas con discapacidad"  width="536" height="196" style="width: 20%;height: 20%;" title="Atencion a personas con discapacidad"/></a>
+			<a href="#login-box6" class="login-window"><img src="diabetes.jpg"alt="diabetes" width="536" height="196" style="width: 20%;height: 20%;" title="Atencion a personas con Diabetes"/></a>
+			<a href="#login-box7" class="login-window"><img src="dialisisperi.jpg" alt="Dialisis" width="536" height="196" style="width: 20%;height: 20%;" title="Dialisis Peritonial"/></a>
+			<a href="#login-box8" class="login-window"><img src="enfermoterm.jpg" alt="Enfermoterm" width="536" height="196" style="width: 20%;height: 20%;" title="Atencion a enfermos terminales"/></a>
+			<a href="#login-box9" class="login-window"><img src="esponja.jpg" alt="Esponja" width="536" height="196" style="width: 20%;height: 20%;" title="Baños de esponja"/></a>
+			<a href="#login-box10" class="login-window"><img src="fracturas.jpg" alt="Fracturas" width="536" height="196" style="width: 20%;height: 20%;" title="Atencion de fracturas"/></a>
+			<a href="#login-box11" class="login-window"><img src="hipertensos.jpg" alt="Hipertension" width="536" height="196" style="width: 20%;height: 20%;" title="Atención a pacientes Hipertensos"/></a>
+            </div>
+            <div id="login-box" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2> Atencion a personas de la tercera edad</h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>Especializada y con el mejor personal, para cubrir las necesidades
+                de las personas de la tercera edad</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+    <div id="login-box0" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Atencion y cuidado </h2> </span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>A personas de que no pueden ser vigiladas o atendidas por sus familiares
+                y no quieren instalarlos en una casa de reposo.</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box1" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Aplicacion de tratamientos medicos y biologicos </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>Lo primero que se debe hacer es tratar de identificar el tipo de serpiente que ocasion
+                la mordedura, verificar si la persona fue efectivamente mordida, y monitorear la severidad del 
+                envenamiento basandose en los signos y sintomas que presente el paciente.
+                En el tratamiento pueden tenerse dos situaciones totalmente diferentes: a) la 
+                aplicacion del antiveneno en condiciones de campo y b) la terapia a nivel hospitalario.</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box2" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Aplicacion de suero </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span> Lo primero que se debe hacer es tratar de identificar el tipo de serpiente que ocasion
+                la mordedura, verificar si la persona fue efectivamente mordida, y monitorear la severidad del 
+                envenamiento basandose en los signos y sintomas que presente el paciente.
+                En el tratamiento pueden tenerse dos situaciones totalmente diferentes: a) la 
+                aplicacion del antiveneno en condiciones de campo y b) la terapia a nivel hospitalario. </span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box3" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Instalacion de cateterismo </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>El cateterismo vesical o uretral es la introducción de una sonda,
+                a través de la uretra al interior de la vejiga urinaria con fines
+                diagnósticos y terapéuticos.</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box4" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Cuidado de pacientes con cirugia de cara, entre otros </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>Cirugía estética de los párpados y las cejas
+                Cirugía del envejecimiento facial
+                Cirugía estética de la nariz
+                Cirugía estética del mentón y de los malares
+                Cirugía estética de las orejas
+                Cirugía estética de las mamas
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box5" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Atencion a personas con discapacidad </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>Las personas con discapacidad intelectual necesitan
+                        asistencia y/o ayuda importante para realizar
+                        actividades de la vida diaria. El nivel de
+                        autonomía que tengan determinará la intensidad
+                        de esa asistencia, que traduciremos en cuidados.
+                        Estos cuidados se darán, por lo general, en
+                        todas las etapas de la vida de la persona</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box6" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Atencion a personas con Diabetes </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>La inyección deberá de realizarse completamente después de cargar la jeringilla .
+                 Antes se debe de limpiar la piel con un algodón y alcohol . Con los dedos indice y pulgar de la mano izquierda se pellizcará la piel y el tejido subcutáneo, 
+                 formando un pliegue donde se introducirá la aguja perpendicular u oblicua ligeramente según la zona .
+                 La inyección será subcutánea  , en la grasa que hay por debajo de la piel .</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box7" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Dialisis Peritonial </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>La diálisis peritoneal (DP) utiliza una membrana natural -el peritoneo- como filtro. 
+                El fluido de diálisis se introduce en la cavidad peritoneal a través de un pequeño tubo flexible que previamente se implantó en el
+                abdomen de forma permanente, en una intervención quirúrgica menor. Parte de este tubo, o catéter, permanece fuera del abdomen. 
+                De esta forma puede conectarse a las bolsas de solución de diálisis. 
+                El catéter queda oculto bajo la ropa.</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box8" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Atencion a enfermos terminales </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>En torno al paciente terminal se centra buena parte de los problemas éticos más importantes con los que debe enfrentarse el médico. 
+                Constituye una paradoja que una de las carencias que las facultades de medicina permiten al estudiante que concluye sus estudios de pregrado
+                 sea la referida al aprendizaje de todo lo concerniente con el proceso de morir.</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box9" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Baños de esponja </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>Es la limpieza general que se proporciona a un paciente a su cama cuando 
+                no puede o no le está permitido bañarse en regadera o tina.</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box10" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Atencion de fracturas </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>Una fractura es la ruptura total o parcial de un hueso. Se debe a una caída, 
+                golpes fuertes o la contracción violenta de un músculo.
+                Existen dos tipos de fracturas, las cerradas que son en las que el hueso se rompe 
+                pero la piel permanece intacta, y aquellas cuando la herida está abierta y el hueso 
+                fracturado está expuesto.</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+        <div id="login-box11" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Cerrar" /></a>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="titulo">
+                <span> <h2>Atención a pacientes Hipertensos </h2></span>
+                </label>
+                <p>
+                <label class="cuerpo">
+                <span>Esta labor implica detectar, resolver y prevenir los problemas relacionados 
+                con los medicamentos (PRM). Para llevar a cabo esta función se debe establecer un
+                plan de atención que implique todas aquellas funciones encaminadas a ayudar a un 
+                paciente a alcanzar una meta de salud determinada</span>
+                </label>    
+                 </p>         
+                </fieldset>
+          </form>
+		</div>
+    </div>
+</div>
+</div>
+			</div>
+		</div>
+	
+	</div>
+
+</body>
+</html>
