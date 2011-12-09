@@ -37,7 +37,7 @@
 	if ( is_null( $username ) || is_null( $nomb ) || is_null( $email ) || is_null( $password ))
 	{
 		array_push($err,'Todos los campos son requeridos');
-		echo "alert ()";
+		
 	}
 	 
 	if(strlen($username)<5 || strlen($username)>12)

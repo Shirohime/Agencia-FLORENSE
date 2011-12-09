@@ -616,8 +616,8 @@ padding: 14px;
     <form action="registrar.php" name="registro" method="post" style="margin-left:300px;">
     <label>Username: </label>
     <input name="usuario" type="text" required="required" value='<?php echo $_POST['usuario']; ?>' />
-    <?php echo $error1 ?><br />
-    <span class="error"> </span><br />
+    <br />
+    <span class="error"><?php echo $error1 ?></span><br />
      <label>Nombre: </label>
     <input name="nombre" type="text" required="required" style="margin-left:25px;" /><br />
     <span class="error"> </span><br />
