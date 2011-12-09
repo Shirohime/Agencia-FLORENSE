@@ -1,5 +1,5 @@
 <?php
-//session_start();
+ session_start();
 require('conexion.php');
 // $con = $db;
 
@@ -28,10 +28,12 @@ if(mysql_num_rows($query2) > 0){
 			 $data = mysql_fetch_array($query);
 			 
  			 if($data['pass'] != md5($password) || $data['usuario'] != $username) {
-  				$salida = '<p class="alert">Error!, usuario o contraseña incorrectos!</p>';
+ 			 	
+  				$msg = 'Error!, usuario o contraseña incorrectos!';
 				//$redirect = 'login.php';
  			}else{
 				$_SESSION['conectado']="logueado";
+				$_SESSION['username'] = $username;
 				 /*echo "Ha iniciado sesion.. !";*/
 				 $redirect = 'index.php';
 				 $msg = "Bienvenido  ".$username;
@@ -94,7 +96,7 @@ if(mysql_num_rows($query) > 0){
         </script>
     </head>
 <body>
-	<p style="text-align:center;"><?php echo $msg ?></p>
+	<p class='alert' style="text-align:center;"><?php echo $msg ?></p>
 </body>
 </html>
 

@@ -14,7 +14,7 @@
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
 
-<!--<link rel="stylesheet" href="css/reset.css" />-->
+<!-- <link rel="stylesheet" href="css/reset.css" /> -->
  <link rel="stylesheet" href="css/styles.css" />
 
 
@@ -25,8 +25,8 @@
 
 
  <link type="text/css" href="menu.css" rel="stylesheet" />
-<!--<link rel="stylesheet" href="css/style1.css" type="text/css" media="screen" />-->
-<!-- <link rel="stylesheet" href="css/slide.css" type="text/css" media="screen" />-->
+<!-- <link rel="stylesheet" href="css/style1.css" type="text/css" media="screen" /> -->
+<!-- <link rel="stylesheet" href="css/slide.css" type="text/css" media="screen" /> -->
  
  <link rel="stylesheet" type="text/css" href="css/jquery.ad-gallery.css">
 
@@ -100,6 +100,15 @@
       #descriptions .ad-image-description .ad-description-title {
         display: block;
       }
+  .welcome {
+  	background: #BCF5A9; /* url(../exclamation.png) center no-repeat; */
+	background-position: 15px 50%; /* x-pos y-pos */
+	text-align: left;
+	padding: 5px 20px 5px 45px;
+	border-top: 2px solid #ffd324;
+	border-bottom: 2px solid #ffd324;
+  }    
+      
   </style>
     
 
@@ -121,11 +130,7 @@ ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es re
 	padding: 0;
 	margin: 0;
 }
-/*h1, h2, h3, h4, h5, h6, p {
-	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen de la etiqueta div contenedora. El margen inferior restante lo mantendrá separado de los elementos de que le sigan. */
-/*	padding-right: 15px;
-	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
-/*}*/
+
 a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
 	border: none;
 }
@@ -178,11 +183,14 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
 }
 
 /* ~~ El pie de página ~~ */
-/*.footer {
+
+/*
+.footer {
 	padding: 10px 0;
-	background: url(Imagenes/fondo4.jpg); /*Color: #FFF*/
-	/*color:#C0C0C0;
+	background: url(Imagenes/fondo4.jpg); Color: #FFF
+	color:#C0C0C0;
 }
+*/
 
 /* ~~ clases float/clear varias ~~ */
 .fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
@@ -193,7 +201,7 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
 	float: left;
 	margin-right: 8px;
 }
-.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+.clearfloat { /* esta clase puede situarse en una <br > o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
 	clear:both;
 	height:0;
 	font-size: 1px;
@@ -245,7 +253,7 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
           
           <a href="index.php">
         
-          <img src="Imagenes/logo.jpg" alt="Logo" name="Insert_logo" width="181" height="114" id="Insert_logo" style="background: 				          #8090AB; display:block;"/>
+          <img src="Imagenes/logo.jpg" alt="Logo" name="Insert_logo" width="181" height="114" id="Insert_logo" style="background:#8090AB; display:block;"/>
           
            <!-- Navigation Menu -->
     
@@ -317,7 +325,20 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
  
   <center><div class="content">
 
-  <font id="title1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... Atención de calidad con calidez ...</font>
+ <?php
+ 	if( isset($_SESSION['conectado']) ){
+ 		if( $_SESSION['conectado'] == 'logueado' ){
+ 			?>
+ 			<div class="welcome">
+ 				<p>Bienvenido <?php echo $_SESSION['username']; ?> </p>
+ 			</div>
+ 			<?php
+ 		} else {
+ 			//si quieres poner algo cuando no esta logueado
+ 		}
+ 	}
+ ?>
+  <h1 id="title1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... Atención de calidad con calidez ...</h1>
   <br /><br /><br /><br />
   
       <center><div id="gallery" class="ad-gallery">
