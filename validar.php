@@ -1,6 +1,7 @@
 <?php
- session_start();
-require('conexion.php');
+
+	session_start();
+	require('conexion.php');
 // $con = $db;
 
 /*$query2 = mysql_query("SELECT * FROM usuario WHERE usuario='".$username."' and pass='".$password."'"); 
@@ -35,7 +36,7 @@ if(mysql_num_rows($query2) > 0){
 				$_SESSION['conectado']="logueado";
 				$_SESSION['username'] = $username;
 				 /*echo "Ha iniciado sesion.. !";*/
-				 $redirect = 'index.php';
+				// $redirect = 'index.php';
 				 $msg = "Bienvenido  ".$username;
  /*$query = mysql_query("SELECT usuario,pass FROM usuario WHERE usuario = '$username'") or die(mysql_error());
  $row = mysql_fetch_array($query);

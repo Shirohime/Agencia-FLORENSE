@@ -1,3 +1,7 @@
+<?php
+require("conexion.php");
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -418,7 +422,7 @@ font-size:14px;
 font-weight:bold;
 }
  
-input[type="text"], input[type="password"], textarea{
+input[type="text"], input[type="password"], textarea, select{
 -moz-border-radius: 6px 6px 6px 6px;
 -moz-box-shadow: 3px 5px 10px #78D8F2;
 border: 1px solid #05BBED;
@@ -426,6 +430,13 @@ font-size: 15px;
 margin: 8px;
 padding: 6px;
 width: 220px;
+}
+
+option{
+	-moz-border-radius: 6px 6px 6px 6px;
+	-moz-box-shadow: 3px 5px 10px #78D8F2;
+	border: 1px solid #05BBED;
+	font-size: 15px;
 }
  
 input[type="submit"], input[type="reset"]{
@@ -629,9 +640,27 @@ padding: 14px;
                      <div class="form">
                      <div style="margin-left:80px; ">
                      <label>*Nombre de la Enfermera:</label><br>
-                     <a href="listaEnfermeras.php">Ver lista de Enfermeras</a>
+                     
+                     <a href="listaEnfermeras.php">Mostrar Lista de Enfermeras</a>
                      <br />
-                      <input name="NombreE" type="text" id="NombreE" size="35" required="required" style="height:25px; width:350px;" onKeyPress="return handleEnter(this, event)" />
+                       <select name="NombreE" id="NombreE" style="width:100%; height:38px; width:367px;" onkeypress="return handleEnter(this, event)">
+                    <option></option>
+<?php
+	$qry_enf="SELECT * FROM enfermeras";
+	$con_enf=mysql_query($qry_enf,$con);
+	$i=0;
+	while($dat_enf=mysql_fetch_array($con_enf))
+	{
+?>
+<script>
+	var enf=new Option("<?php echo $dat_enf['Nombre'].' '.$dat_enf['ApellidoPaterno'].' '.$dat_enf['ApellidoMaterno']?>","<?php echo $dat_enf['IDEnfermera'] ?>");
+	document.getElementById('NombreE').options[<?php echo $i?>] = enf;
+</script>
+<?php
+	$i++;
+	}
+?>
+                    </select>
                     </div></div><br>
                     <div class="form">
                     <div style="margin-left:80px; ">

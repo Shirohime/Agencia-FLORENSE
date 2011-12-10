@@ -1,7 +1,3 @@
-<?php 
-	require ('conexion.php');
-	require ('validar.php');
-?>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -490,7 +486,6 @@ padding: 14px;
         
          <div class="header">
      
-          
           <br />
           <br />
           
@@ -580,21 +575,15 @@ padding: 14px;
   			<img src="Imagenes/iconenfermera1.jpg" width="200" height="180" style="float:left; margin-left:50px;" />
   			<br /><br />
   
-  			<div style="margin-left:300px;"><a href="registro.php"><h2>Registrate </a>&nbsp;/&nbsp;<a href="login.php"> Ingresa</h2></a></div>
+  			<div style="margin-left:300px;"><h2>Envio de password</h2></div>
   
   			<br /><br />
            	
-  			<form name="login" action="validar.php" method="post" onsubmit="return validar();" style="margin-left:300px;">
-            <?php echo $salida ?>
-            <br>Usuario: <input type="text" id="uusuario" name="usuario" required="required" style="margin-left:30px;">
-            <span class="error"> </span><br>
-            <br>Contraseña:<input type="password" id="pass" name="pass" required="required">
-            <span class="error"> </span><br><br />
-            <a href="forPass.php">Se me olvido la contraseña.</a>
-            <br><br><br><input name="Enviar" type="submit" value="Ingresar" style="margin-left:120px;">
-             
-   
+  			<form name="login" action="recPass.php" method="post";" style="margin-left:300px;">
+            <br>Correo: <input type="text" id="correo" name="correo" required="required" style="margin-left:30px;"><br>
             
+            <br><input name="Enviar" type="submit" value="Enviar" style="margin-left:120px;">
+              
             </form>
          
   
@@ -624,7 +613,8 @@ padding: 14px;
     
     
 </div>
-   
+
+
    
    
   <div class="footer">

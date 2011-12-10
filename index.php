@@ -101,12 +101,14 @@
         display: block;
       }
   .welcome {
-  	background: #BCF5A9; /* url(../exclamation.png) center no-repeat; */
-	background-position: 15px 50%; /* x-pos y-pos */
-	text-align: left;
-	padding: 5px 20px 5px 45px;
-	border-top: 2px solid #ffd324;
-	border-bottom: 2px solid #ffd324;
+  	/*background: #BDE5F8; /* url(../exclamation.png) center no-repeat; #BCF5A9 */
+	/*background-position: 15px 50%; /* x-pos y-pos */
+	text-align: right;
+	margin-right:30px;
+	color: #BDE5F8;
+	/*padding: 5px 20px 5px 45px;
+	border-top: 2px solid #414958;
+	border-bottom: 2px solid #414958;*/
   }    
       
   </style>
@@ -247,7 +249,21 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
     	
         
          <div class="header">
-     
+         
+         <br />
+     	<?php
+ 	if( isset($_SESSION['conectado']) ){
+ 		if( $_SESSION['conectado'] == 'logueado' ){
+ 			?>
+ 			<div class="welcome">
+ 				<p>Bienvenido <?php echo $_SESSION['username']; ?> | <a  href="desconectarse.php"> <font color="#BDE5F8">Salir</font></a></a>&nbsp;<img src="Imagenes/usuario.png" style="height:40px; width:40px; float:right;"/></p>
+ 			</div>
+ 			<?php
+ 		} else {
+ 			//si quieres poner algo cuando no esta logueado
+ 		}
+ 	}
+ ?>
           <br />
           <br />
           
@@ -310,6 +326,7 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
           
     </a>
  
+ 	
   
   
   <!-- end .header -->   
@@ -325,19 +342,7 @@ a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usu
  
   <center><div class="content">
 
- <?php
- 	if( isset($_SESSION['conectado']) ){
- 		if( $_SESSION['conectado'] == 'logueado' ){
- 			?>
- 			<div class="welcome">
- 				<p>Bienvenido <?php echo $_SESSION['username']; ?> </p>
- 			</div>
- 			<?php
- 		} else {
- 			//si quieres poner algo cuando no esta logueado
- 		}
- 	}
- ?>
+ 
   <h1 id="title1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... Atención de calidad con calidez ...</h1>
   <br /><br /><br /><br />
   

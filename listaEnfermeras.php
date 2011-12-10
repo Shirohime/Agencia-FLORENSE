@@ -2,7 +2,7 @@
 	
 	session_start();
 
-   require('conexion.php');
+   //require('conexion.php');
    require('fpdf17/fpdf.php');
    
    

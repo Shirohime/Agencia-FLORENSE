@@ -71,7 +71,6 @@
 	echo 'Usuario Registrado !.. Felicidades !!';
 	
 	mysql_close();
-	echo 'buen final';
 	//header ("Location: ../index.php");
 	$redirect = 'index.php';
 	}
